@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Per-deploy theme shells (paired with themes.js design.layoutShell + data-theme) */
+html[data-theme="alpha-bridge"] body {
+  letter-spacing: -0.011em;
+}
+
+html[data-theme="global-residency"] body {
+  letter-spacing: -0.008em;
+}
+
+html[data-theme="global-residency"] nav .flex-shrink-0 img,
+html[data-theme="alpha-bridge"] nav .flex-shrink-0 img {
+  width: auto;
+}
+
+
+html[data-theme="horizon"] body {
+  letter-spacing: 0;
+}
+
+html[data-theme="lion-city"] body {
+  letter-spacing: 0.01em;
+}
+
+html[data-theme="one-axis"] body {
+  letter-spacing: 0;
+}
+
+html[data-theme="pr-bridge"] body {
+  letter-spacing: 0.012em;
+}
+
+html[data-theme="prime-residency"] body {
+  letter-spacing: 0.015em;
+}
+
+html[data-theme="horizon"] .animate-blob {
+  animation-duration: 5.5s;
+}
+
+html[data-theme="prime-residency"] .animate-blob {
+  animation-duration: 9s;
+}
+
+/* Home page: strong visual separation per white-label theme (below-the-fold + hero framing) */
+html[data-theme="alpha-bridge"] #hero {
+  border-bottom: 3px solid color-mix(in srgb, var(--brand-navy-700) 50%, white);
+}
+
+html[data-theme="alpha-bridge"] #services {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 45%, #ffffff 100%);
+  border-top: 1px solid color-mix(in srgb, var(--brand-navy-700) 22%, transparent);
+}
+
+html[data-theme="alpha-bridge"] #assessments {
+  background: #f1f5f9;
+  border-top: 1px solid var(--brand-silver-200);
+}
+
+html[data-theme="alpha-bridge"] #about {
+  border-top: 4px solid var(--brand-navy-700);
+}
+
+html[data-theme="alpha-bridge"] #why-singapore {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+html[data-theme="alpha-bridge"] #contact {
+  background: #e8edf3;
+}
+
+html[data-theme="global-residency"] #hero {
+  box-shadow: inset 0 -32px 48px -36px color-mix(in srgb, var(--brand-navy-700) 22%, transparent);
+}
+
+html[data-theme="global-residency"] #services {
+  background: radial-gradient(ellipse 100% 75% at 50% 0%, color-mix(in srgb, var(--brand-navy-100) 88%, white), #ffffff 52%);
+}
+
+html[data-theme="global-residency"] #assessments {
+  background: #f0f7fc;
+  border-top: 1px solid color-mix(in srgb, var(--brand-navy-700) 15%, transparent);
+}
+
+html[data-theme="global-residency"] #about {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+html[data-theme="global-residency"] #why-singapore {
+  background: #ffffff;
+}
+
+html[data-theme="global-residency"] #contact {
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 55%);
+}
+
+html[data-theme="horizon"] #services {
+  background: radial-gradient(ellipse 120% 72% at 50% -18%, color-mix(in srgb, var(--brand-navy-700) 16%, white), #ffffff 52%);
+}
+
+html[data-theme="horizon"] #assessments {
+  background: color-mix(in srgb, var(--brand-navy-50) 72%, white);
+  border-top: 3px solid var(--brand-navy-700);
+}
+
+html[data-theme="horizon"] #why-singapore {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand-navy-50) 50%, white) 0%, #ffffff 100%);
+}
+
+html[data-theme="horizon"] #contact {
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
+}
+
+html[data-theme="lion-city"] #services {
+  background: #fdf2f8;
+  border-top: 2px solid color-mix(in srgb, var(--brand-navy-700) 32%, transparent);
+}
+
+html[data-theme="lion-city"] #assessments {
+  background: #ffffff;
+  border-top: 4px double color-mix(in srgb, var(--brand-navy-700) 38%, transparent);
+}
+
+html[data-theme="lion-city"] #about {
+  background: linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, var(--brand-navy-50) 42%, white) 100%);
+}
+
+html[data-theme="lion-city"] #why-singapore {
+  background: #fffafb;
+}
+
+html[data-theme="lion-city"] #contact {
+  background: #fce7f3;
+}
+
+html[data-theme="one-axis"] #services {
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 38%, #fff7ed 100%);
+}
+
+html[data-theme="one-axis"] #assessments {
+  background: #ffedd5;
+  border-top: 2px solid color-mix(in srgb, var(--brand-navy-700) 25%, transparent);
+}
+
+html[data-theme="one-axis"] #why-singapore {
+  background: linear-gradient(180deg, #ffffff 0%, #fef3c7 100%);
+}
+
+html[data-theme="one-axis"] #contact {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 65%);
+}
+
+html[data-theme="pr-bridge"] #services {
+  background: #ffffff;
+  border-top: 1px solid var(--brand-silver-300);
+  border-bottom: 1px solid var(--brand-silver-200);
+}
+
+html[data-theme="pr-bridge"] #assessments {
+  background: #f9fafb;
+  border-top: 3px solid var(--brand-navy-700);
+}
+
+html[data-theme="pr-bridge"] #why-singapore {
+  background: #f3f4f6;
+}
+
+html[data-theme="pr-bridge"] #contact {
+  border-top: 1px dashed var(--brand-silver-400);
+}
+
+html[data-theme="prime-residency"] #services {
+  background: radial-gradient(900px 520px at 88% 12%, color-mix(in srgb, var(--brand-navy-100) 92%, white), #ffffff 58%);
+}
+
+html[data-theme="prime-residency"] #assessments {
+  background: color-mix(in srgb, var(--brand-royal-50) 55%, white);
+}
+
+html[data-theme="prime-residency"] #about {
+  background: linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, var(--brand-navy-50) 38%, white) 100%);
+}
+
+html[data-theme="prime-residency"] #contact {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand-royal-50) 45%, white) 0%, #ffffff 100%);
+}
